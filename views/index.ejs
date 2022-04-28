@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap 5 link below-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <meta http-equiv="refresh" content="86400">
+    <!--86400 is a full day; -->
+    <meta http-equiv="refresh" content="10">
     <title>Star Wars</title>
     <style>
         body 
@@ -20,8 +21,8 @@
 </head>
 <body>
 <br><br><br><br><br>
-
-<div>
+ 
+<div class="container" style="width: 80%; text-align: center;">
     <div class="shadow p-3 mb-5 bg-body rounded text-center" style="background-color: gray;">
 
         <% if (data == "planets"){ %> 
@@ -48,7 +49,7 @@
 
         <%} else if (data == "people"){ %>
             <div class="container row">
-                <h1>Here are a bunch of random facts about a Star Wars people</h1>
+                <h1>Here are a bunch of random facts about Star Wars people</h1>
                 <div class="col">
 
 
@@ -59,6 +60,8 @@
                     <p>Skin Color: <%= aStarWars.skin_color %> </p>
                     <p>Birth year: <%= aStarWars.birth_year %></p>
                     <p>Gender: <%= aStarWars.gender %></p><br><br>
+
+                    <p>weather: <%= aWeatherResult.current_weather %> </p>
                 </div>
                 <div class="col">
                     <img src="/img/Person/Person<%=characterId%>.jpg" height="300">
