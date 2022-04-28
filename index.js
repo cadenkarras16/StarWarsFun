@@ -73,8 +73,6 @@ app.get("/", (req, res) => {
     });
 });
 
-
-
 app.listen(3000, () =>
   console.log("Express App has started and server is listening!")
 );
