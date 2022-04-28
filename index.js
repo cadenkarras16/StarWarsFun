@@ -31,28 +31,33 @@ app.get("/", (req, res) => {
 
     if (type == "planets")
     {
-        apiNumber = Math.floor(Math.random() * 61);
+        //The total number of facts about planets is 60
+        apiNumber = Math.floor(Math.random() * 60) + 1;
     } 
     else if (type == "starships")
     {
+        //the number of facts for starships is 9 - 13
         apiNumber = Math.floor(Math.random() * 5) + 9;
     }
     else if (type == "people")
     {
         //errors happen on the following numbers from the API: 17, 
         //I have only gone up to 50 as of April 27th ^^
-        //apiNumber = Math.floor(Math.random() * 84);
+        //the total number of people facts is 83
+        apiNumber = Math.floor(Math.random() * 9) + 1;
         if (apiNumber == 17) {
             apiNumber = 1
         }
     }
     else if (type == "films")
     {
+        //the total number of films is 6
         apiNumber = Math.floor(Math.random() * 6) + 1;
     }
     else if(type == "species")
     {
-        apiNumber = Math.floor(Math.random() * 37) + 1;
+        //the total number of species is 36
+        apiNumber = Math.floor(Math.random() * 36) + 1;
     }
 
     // switch (type)

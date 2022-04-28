@@ -13,16 +13,16 @@
         {
             /* Millenium Falcon Background: "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/279451549_672091804015614_2772677108757777769_n.jpg?stp=dst-jpg_p180x540&_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_ohc=UDF1fnL3W6sAX92scRb&_nc_oc=AQnkxPjwYtIGTLypqctMl_Ed8dFTOVJwnPVH8drRoDy9g91OzRJUWDqJCzxk4ryo4k4&_nc_ht=scontent-lax3-2.xx&oh=00_AT-TQO1ToLbw1Uy-X2wNRkbkvXKQtcCoT3Mvf_1EE231aQ&oe=626F3206"*/
             /* space picture of earth bacgkround: "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/279431261_672093677348760_3219844127226086248_n.jpg?stp=dst-jpg_p180x540&_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=rbKEKvbznHEAX_BAxUF&_nc_ht=scontent-lax3-1.xx&oh=00_AT-IhUMS8UB-w8a2xvl0mVG_BouO6CjmGnflmIF7BfUUag&oe=62707946" */
-            background-image: url("https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/279431261_672093677348760_3219844127226086248_n.jpg?stp=dst-jpg_p180x540&_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=rbKEKvbznHEAX_BAxUF&_nc_ht=scontent-lax3-1.xx&oh=00_AT-IhUMS8UB-w8a2xvl0mVG_BouO6CjmGnflmIF7BfUUag&oe=62707946");
+            background-image: url("/img/BackgroundPicture.jpeg");
             background-size: cover;
         }
     </style>
 </head>
 <body>
-<br><br><br>
+<br><br><br><br><br>
 
-
-    <div class="shadow p-3 mb-5 bg-body rounded text-center">
+<div>
+    <div class="shadow p-3 mb-5 bg-body rounded text-center" style="background-color: gray;">
 
         <% if (data == "planets"){ %> 
             <h3>Here are a bunch of random facts about a Star Wars planet</h3>
@@ -47,18 +47,24 @@
             <p>Passengers: <%= aStarWars.passengers %></p>
 
         <%} else if (data == "people"){ %>
-            <h1>Here are a bunch of random facts about a Star Wars people</h1>
+            <div class="container row">
+                <h1>Here are a bunch of random facts about a Star Wars people</h1>
+                <div class="col">
 
-            <p>Name: <%= aStarWars.name %> </p>
-            <p>Height: <%= aStarWars.height %> cm </p>
-            <p>Weight/Mass: <%= aStarWars.mass %> kg</p>
-            <p>Hair Color: <%= aStarWars.hair_color %> </p>
-            <p>Skin Color: <%= aStarWars.skin_color %> </p>
-            <p>Birth year: <%= aStarWars.birth_year %></p>
-            <p>Gender: <%= aStarWars.gender %></p><br><br>
-            <div class="text-right">
-                <img src="/img/Person/Person<%=characterId%>.jpg" height="250">
+
+                    <p>Name: <%= aStarWars.name %> </p>
+                    <p>Height: <%= aStarWars.height %> cm </p>
+                    <p>Weight/Mass: <%= aStarWars.mass %> kg</p>
+                    <p>Hair Color: <%= aStarWars.hair_color %> </p>
+                    <p>Skin Color: <%= aStarWars.skin_color %> </p>
+                    <p>Birth year: <%= aStarWars.birth_year %></p>
+                    <p>Gender: <%= aStarWars.gender %></p><br><br>
+                </div>
+                <div class="col">
+                    <img src="/img/Person/Person<%=characterId%>.jpg" height="300">
+                </div>
             </div>
+
             
 
         <%} else if (data == "films"){ %>
@@ -82,6 +88,7 @@
         <%}%>
         <br />
     </div>
+</div>
 
 
 
