@@ -17,9 +17,12 @@ app.get("/", (req, res) => {
     //this is the random number for the value inside the type of variables we are pulling
     //let apiNumber = Math.floor(Math.random() * 84);
     let apiNumber = 1;
+    let typeNumber = 2;
+
+//Commented out below for testing with only people purposes
 
     let data = ["planets","starships", "people", "films", "species"]
-    let typeNumber = Math.floor(Math.random() * 6);
+    //let typeNumber = Math.floor(Math.random() * 5);
     let type = data[typeNumber]
 
 
@@ -33,7 +36,12 @@ app.get("/", (req, res) => {
     }
     else if (type == "people")
     {
+        //errors happen on the following numbers from the API: 17, 
+        //I have only gone up to 50 as of April 27th ^^
         apiNumber = Math.floor(Math.random() * 84);
+        if (apiNumber == 17) {
+            apiNumber = 1
+        }
     }
     else if (type == "films")
     {
@@ -65,8 +73,9 @@ app.get("/", (req, res) => {
 
     console.log(type + apiNumber);
 
-    swapi.get('https://swapi.dev/api/' + type + '/' + apiNumber).then(result => {
-        res.render("index", {aStarWars: result, data: type}, );
+    //
+    swapi.get('https://swapi.dev/api/' + type + '/' + apiNumber ).then(result => {
+        res.render("index", {aStarWars: result, data: type, characterId: apiNumber}, );
     }).catch(err => {
         console.log(err);
         res.status(500).json({err});
