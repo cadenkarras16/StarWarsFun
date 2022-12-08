@@ -16,6 +16,8 @@ app.use(express.static(__dirname+'/public'));
 //    console.log(result);
 //});
 
+
+
 app.get("/", (req, res) => {
 
     //this is the random number for the value inside the type of variables we are pulling
@@ -23,6 +25,7 @@ app.get("/", (req, res) => {
     let apiNumber = 1;
     
     let typeNumber = 2;
+    let weatherResult;
 
 //Commented out below for testing with only people purposes
 
@@ -88,7 +91,7 @@ app.get("/", (req, res) => {
 
 
     swapi.get('https://swapi.dev/api/' + type + '/' + apiNumber ).then(result => {
-        res.render("index", {aStarWars: result, data: type, characterId: apiNumber});
+        res.render("index", {aStarWars: result, data: type, characterId: apiNumber, weather: weatherResult});
     }).catch(err => {
         console.log(err);
         res.status(500).json({err});
